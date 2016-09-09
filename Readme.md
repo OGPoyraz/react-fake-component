@@ -17,11 +17,7 @@ add ```https://github.com/OGPoyraz/react-fake-component/blob/master/dist/style.c
 import FakeComponent from 'react-fake-component';
 
 // & Render
-<FakeComponent fake={{
-    type: 'p',
-    header: false,
-    line: 3
-    }}/>
+<FakeComponent fake={{type: 'p',header: false,line: 3}}/>
 ```
 
 ###Development
