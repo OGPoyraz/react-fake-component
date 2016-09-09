@@ -1,10 +1,12 @@
 {
   "name": "react-fake-component",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "We fake components since 1988.",
   "main": "dist/index.js",
   "scripts": {
-    "build": "./node_modules/.bin/babel fakeComponent.js -o dist/index.js",
+    "clean": "rm -rf public",
+    "build": "./node_modules/.bin/babel app/fakeComponent.js -o dist/index.js",
+    "development": "npm run clean && webpack --watch",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -25,6 +27,7 @@
   },
   "homepage": "https://github.com/OGPoyraz/react-fake-component#readme",
   "dependencies": {
+    "babel-loader": "^6.2.5",
     "react": "^15.3.1",
     "react-dom": "^15.3.1"
   },
@@ -33,6 +36,15 @@
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
-    "babili": "0.0.4"
+    "babili": "0.0.4",
+    "browser-sync": "^2.15.0",
+    "browser-sync-webpack-plugin": "^1.1.2",
+    "css-loader": "^0.25.0",
+    "html-webpack-plugin": "^2.22.0",
+    "node-sass": "^3.9.3",
+    "path": "^0.12.7",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
   }
 }

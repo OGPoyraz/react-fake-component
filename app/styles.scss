@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin bgOpacity {
+  background: rgba(255, 255, 255, 0);
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.47) 75%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 1)), color-stop(75%, rgba(255, 255, 255, 0.47)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.47) 75%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.47) 75%, rgba(255, 255, 255, 0) 100%);
+  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.47) 75%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.47) 75%, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1);
+}
+
+@mixin loaderBgAnimation($percentage) {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: unquote($percentage+'%');
+    height: 100%;
+    @include bgOpacity;
+    transform: translateX(-100%);
+    animation: loading+$percentage 3s infinite;
+  }
+}
+
+@keyframes loading33 {
+  100% {
+    transform: translateX(300%)
+  }
+}
+
+@keyframes loading50 {
+  100% {
+    transform: translateX(200%)
+  }
+}
+
+@keyframes loading100 {
+  100% {
+    transform: translateX(100%)
+  }
+}
+
+@keyframes loading200 {
+  100% {
+    transform: translateX(50%)
+  }
+}
+
+.fake {
+  * {
+    overflow: hidden;
+  }
+  .p, .c {
+  }
+  .h, .l, .a {
+    background: #dedede;
+  }
+
+  .h, .l {
+    @include loaderBgAnimation(100);
+    margin-bottom: 10px;
+  }
+  .a {
+    @include loaderBgAnimation(200);
+  }
+
+  .h {
+    height: 20px;
+  }
+  .l {
+    height: 10px;
+    &:last-child {
+      margin-bottom: 0 !important;
+      width: 80%;
+    }
+  }
+
+  .p {
+
+  }
+  .c {
+    display: flex;
+    flex-direction: row;
+    .a {
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      margin-right: 10px
+    }
+    .d {
+
+      width: 100%;
+    }
+  }
+}
+
+.customClass {
+  border: 5px solid #A1CCA5;
+  padding:10px;
+  .l {
+    background-color: #A1CCA5;
+  }
+  .h {
+    background-color: #8FB996;
+  }
+  .a {
+    background-color: #8FB996;
+  }
+}
