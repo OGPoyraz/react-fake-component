@@ -1,11 +1,11 @@
 {
   "name": "react-fake-component",
-  "version": "1.0.4",
-  "description": "We fake components since 1988.",
-  "main": "dist/index.js",
+  "version": "1.0.6",
+  "description": "We fake it since 1988.",
+  "main": "dist/fakeComponent.js",
   "scripts": {
     "clean": "rm -rf public",
-    "build": "./node_modules/.bin/babel app/fakeComponent.js -o dist/index.js",
+    "build": "./node_modules/.bin/babel fakeComponent.js -o dist/fakeComponent.js",
     "development": "npm run clean && webpack --watch",
     "prepublish": "npm run build"
   },
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
+    "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
@@ -40,6 +41,7 @@
     "browser-sync": "^2.15.0",
     "browser-sync-webpack-plugin": "^1.1.2",
     "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.22.0",
     "node-sass": "^3.9.3",
     "path": "^0.12.7",

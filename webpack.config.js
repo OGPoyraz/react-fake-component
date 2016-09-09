@@ -1,13 +1,15 @@
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 
 module.exports = {
-    entry: './app/app.js',
+    entry: [
+        './app/app.js'
+    ],
     output: {
-        path: path.join(__dirname, 'public'),
-        filename: 'app.js',
-        publicPath: '/'
+        path: path.join(__dirname, 'dist'),
+        filename: 'bundle.js'
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -15,12 +17,11 @@ module.exports = {
             template: 'app/index.html'
         }),
         new BrowserSyncPlugin({
-            // browse to http://localhost:3000/ during development,
-            // ./public directory is being served
             host: 'localhost',
             port: 3000,
-            server: {baseDir: ['public']}
-        })
+            server: {baseDir: ['dist']}
+        }),
+        new ExtractTextPlugin("style.css", {allChunks: false})
     ],
     module: {
         loaders: [
@@ -32,7 +33,8 @@ module.exports = {
                 query: {presets: ['es2015', 'react', 'stage-2', 'babili']}
             }, {
                 test: /\.scss$/,
-                loaders: ["style", "css", "sass"]
+                include: path.join(__dirname, 'app'),
+                loader: ExtractTextPlugin.extract('style-loader','css-loader?minimize!sass')
             }
         ]
     }

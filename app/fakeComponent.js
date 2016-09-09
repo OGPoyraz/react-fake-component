@@ -1,17 +1,14 @@
 import React from 'react';
-import './styles.scss';
+
 class FakeComponent extends React.Component {
-    componentDidMount() {
 
-
-    }
     render() {
         const {fake} = this.props;
         const fakeClass = "fake " + fake.type + " " + (fake.className || "");
         let lines, header;
-
         switch (fake.type) {
-            case 'p':case 'c': {
+            case 'p':
+            case 'c': {
                 lines = Array(fake.line).fill();
                 header = fake.header || false;
                 break;

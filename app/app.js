@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import FakeComponent from './fakeComponent';
+import "./styles.scss";
 
 render(
     <div style={{width: '50%', marginLeft: 'auto', marginRight: 'auto', marginTop: '30px'}}>
