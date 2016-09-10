@@ -1,11 +1,11 @@
 {
   "name": "react-fake-component",
-  "version": "1.0.6",
-  "description": "We fake it since 1988.",
+  "version": "1.0.8",
+  "description": "Chuck Norris faking components since he can.",
   "main": "dist/fakeComponent.js",
   "scripts": {
     "clean": "rm -rf public",
-    "build": "./node_modules/.bin/babel fakeComponent.js -o dist/fakeComponent.js",
+    "build": "./node_modules/.bin/babel app/fakeComponent.js -o dist/fakeComponent.js",
     "development": "npm run clean && webpack --watch",
     "prepublish": "npm run build"
   },
