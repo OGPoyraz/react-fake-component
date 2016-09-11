@@ -11,13 +11,13 @@ This component highly inspired from [Kenan Yusuf's -Fake it'til you Make it- blo
 
 Install
 
-```
+```bash
 npm i --save react-fake-component 
 ```
 
 add ```https://github.com/OGPoyraz/react-fake-component/blob/master/dist/style.css``` into your styles.
 
-```
+```js
 // Import
 import FakeComponent from 'react-fake-component';
 
@@ -29,7 +29,7 @@ import FakeComponent from 'react-fake-component';
 
 Clone repo & navigate into it
 
-```
+```bash
 npm i
 npm run development
 ```
