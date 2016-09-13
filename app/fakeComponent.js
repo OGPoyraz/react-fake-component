@@ -5,48 +5,53 @@ class FakeComponent extends React.Component {
     render() {
         const {fake} = this.props;
         const fakeClass = "fake " + fake.type + " " + (fake.className || "");
-        let lines, header;
+        let lines, header, repeat;
         switch (fake.type) {
             case 'p':
-            case 'c': {
+            case 'c':
                 lines = Array(fake.line).fill();
+                repeat = Array(fake.repeat || 1).fill();
                 header = fake.header || false;
-                break;
-            }
             default:
                 break;
         }
         return (
             <div className={fakeClass} style={fake.styleForComponent}>
-                {/*Including if paragraph */}
                 {
-                    fake.type === 'p' &&
-                    <div className="p">
-                        {
-                            header &&
-                            <div style={fake.styleForHeader} className="h"></div>
-                        }
-                        {
-                            lines.map((item, i)=><div style={fake.styleForLine} key={i} className="l"></div>)
-                        }
-                    </div>
-                }
-                {/*Including if comment */}
-                {
-                    fake.type === 'c' &&
-                    <div className="c">
-                        <div className="a" style={fake.styleForAvatar}>
-                        </div>
-                        <div className="d">
+                    repeat.map((_item, _i) =>
+                        <div key={_i} className="r">
                             {
-                                header &&
-                                <div style={fake.styleForHeader} className="h"></div>
+                                fake.type === 'p' &&
+                                <div className="p">
+                                    {
+                                        header &&
+                                        <div style={fake.styleForHeader} className="h"></div>
+                                    }
+                                    {
+                                        lines.map((item, i)=><div style={fake.styleForLine} key={i}
+                                                                  className="l"></div>)
+                                    }
+                                </div>
+                                ||
+                                fake.type === 'c' &&
+                                <div className="c">
+                                    <div className="a" style={fake.styleForAvatar}>
+                                    </div>
+                                    <div className="d">
+                                        {
+                                            header &&
+                                            <div style={fake.styleForHeader} className="h"></div>
+                                        }
+                                        {
+                                            lines.map((item, i)=><div style={fake.styleForLine} key={i}
+                                                                      className="l"></div>)
+                                        }
+                                    </div>
+                                </div>
                             }
-                            {
-                                lines.map((item, i)=><div style={fake.styleForLine} key={i} className="l"></div>)
-                            }
+                            <div className="dd" style={fake.styleForDivider}></div>
                         </div>
-                    </div>
+                    )
                 }
             </div>
         )

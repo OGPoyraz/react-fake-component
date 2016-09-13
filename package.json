@@ -1,6 +1,6 @@
 {
   "name": "react-fake-component",
-  "version": "1.0.8",
+  "version": "1.1.1",
   "description": "Chuck Norris faking components since he can.",
   "main": "dist/fakeComponent.js",
   "scripts": {
@@ -8,10 +8,6 @@
     "build": "./node_modules/.bin/babel app/fakeComponent.js -o dist/fakeComponent.js",
     "development": "npm run clean && webpack --watch",
     "prepublish": "npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/OGPoyraz/react-fake-component.git"
   },
   "keywords": [
     "react",
@@ -22,6 +18,10 @@
   ],
   "author": "OGPoyraz",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OGPoyraz/react-fake-component.git"
+  },
   "bugs": {
     "url": "https://github.com/OGPoyraz/react-fake-component/issues"
   },

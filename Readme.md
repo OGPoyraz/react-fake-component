@@ -22,8 +22,44 @@ add ```https://github.com/OGPoyraz/react-fake-component/blob/master/dist/style.c
 import FakeComponent from 'react-fake-component';
 
 // & Render
-<FakeComponent fake={{type: 'p',header: false,line: 3}}/>
+<FakeComponent fake={{
+    type: 'c',
+    header: true,
+    line: 3,
+    repeat:5,
+    className: 'customClass',
+    styleForComponent: {
+        padding: '20px',
+        border:'5px solid #aac8ff'
+    },
+    styleForDivider:{
+        height:'1px',
+        marginTop:'10px',
+        marginBottom:'10px',
+        backgroundColor:'#ddd'
+    },
+    styleForLine: {
+        backgroundColor: '#aac8ff',
+        marginBottom: '8px',
+        height: '8px'
+    },
+    styleForHeader: {
+        backgroundColor: '#aac8ff',
+        marginBottom: '15px',
+        height: '20px'
+    },
+    styleForAvatar: {
+        backgroundColor: '#aac8ff',
+        width: '100px',
+        height: '100px'
+    }
+}}/>
 ```
+
+#### Changelog
+##### 1.1.1
+* _repeat_ property added. [#1](https://github.com/OGPoyraz/react-fake-component/issues/1)
+* Divider && _styleForDivider_ added. [#2](https://github.com/OGPoyraz/react-fake-component/issues/2)
 
 ###Development
 

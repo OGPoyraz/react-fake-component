@@ -7,9 +7,35 @@ render(
     <div style={{width: '50%', marginLeft: 'auto', marginRight: 'auto', marginTop: '30px'}}>
         <h2>Paragraph with 3 line</h2>
         <FakeComponent fake={{
-            type: 'p',
-            header: false,
-            line: 3
+            type: 'c',
+            header: true,
+            line: 3,
+            repeat:5,
+            styleForComponent: {
+                padding: '20px',
+                border:'5px solid #aac8ff'
+            },
+            styleForDivider:{
+                height:'1px',
+                marginTop:'10px',
+                marginBottom:'10px',
+                backgroundColor:'#ddd'
+            },
+            styleForLine: {
+                backgroundColor: '#aac8ff',
+                marginBottom: '8px',
+                height: '8px'
+            },
+            styleForHeader: {
+                backgroundColor: '#aac8ff',
+                marginBottom: '15px',
+                height: '20px'
+            },
+            styleForAvatar: {
+                backgroundColor: '#aac8ff',
+                width: '100px',
+                height: '100px'
+            }
         }}/>
 
         <h2>Paragraph with header</h2>

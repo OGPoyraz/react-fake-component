@@ -8,6 +8,7 @@
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.50) 75%, rgba(255, 255, 255, 0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1);
 }
+
 @mixin loaderBgAnimation($percentage) {
   position: relative;
   &:after {
@@ -46,11 +47,31 @@
   }
 }
 
+
+// r = repeat
+// l = line
+// c = comment
+// a = avatar
+// h = header
+// dd = divider
+// d = description
+
 .fake {
   * {
     overflow: hidden;
   }
+  .r{
+    &:last-child{
+      .dd{
+        display:none;
+      }
+    }
+  }
+  .dd{
+    height: 10px;
+  }
   .p, .c {
+
   }
   .h, .l, .a {
     background: #dedede;
@@ -96,7 +117,7 @@
 
 .customClass {
   border: 5px solid #A1CCA5;
-  padding:10px;
+  padding: 10px;
   .l {
     background-color: #A1CCA5;
   }
