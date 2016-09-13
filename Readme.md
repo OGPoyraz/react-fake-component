@@ -1,5 +1,7 @@
 #react-fake-component
 
+Bored of loading indicators? You can fake it.
+
 This component highly inspired from [Kenan Yusuf's -Fake it'til you Make it- blog.](https://kyusuf.com/post/fake-it-til-you-make-it-css)
 
 [🦄 Working Demo & Examples](http://ogpoyraz.com/react-fake-component)
